@@ -51,15 +51,25 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   void _pushSaved() {
-    Navigator.of(context).push(
-      new MaterialPageRoute(
-        builder: (context) {
-          return new SavedSuggestions(
-            saved: _saved,
-            biggerFont: _biggerFont,
-          );
-        },
-      ),
+    // Navigator.of(context).push(
+    //   new MaterialPageRoute(
+    //     builder: (context) {
+    //       return new SavedSuggestions(
+    //         saved: _saved,
+    //         biggerFont: _biggerFont,
+    //       );
+    //     },
+    //   ),
+    // );
+    // 另外一种路由使用方式
+    Navigator.push(
+      context,
+      new MaterialPageRoute(builder: (context) {
+        return new SavedSuggestions(
+          saved: _saved,
+          biggerFont: _biggerFont,
+        );
+      }),
     );
   }
 
